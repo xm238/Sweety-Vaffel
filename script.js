@@ -75,12 +75,69 @@ function initHeaderMotion() {
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
+  let isHovering = false;
+  let rafId = 0;
+  let targetX = nav.clientWidth / 2;
+  let targetY = nav.clientHeight / 2;
+  let currentX = targetX;
+  let currentY = targetY;
+
+  const updateGlow = () => {
+    const easing = isHovering ? 0.11 : 0.055;
+    currentX += (targetX - currentX) * easing;
+    currentY += (targetY - currentY) * easing;
+
+    nav.style.setProperty("--mouse-x", `${currentX.toFixed(2)}px`);
+    nav.style.setProperty("--mouse-y", `${currentY.toFixed(2)}px`);
+
+    const delta = Math.abs(targetX - currentX) + Math.abs(targetY - currentY);
+    if (delta > 0.3) {
+      rafId = window.requestAnimationFrame(updateGlow);
+      return;
+    }
+
+    rafId = 0;
+  };
+
+  const startGlowLoop = () => {
+    if (rafId) {
+      return;
+    }
+    rafId = window.requestAnimationFrame(updateGlow);
+  };
+
+  const recenterTarget = () => {
+    targetX = nav.clientWidth / 2;
+    targetY = nav.clientHeight / 2;
+  };
+
+  recenterTarget();
+  startGlowLoop();
+
   nav.addEventListener("pointermove", (event) => {
     const rect = nav.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    nav.style.setProperty("--mouse-x", `${x}px`);
-    nav.style.setProperty("--mouse-y", `${y}px`);
+    targetX = event.clientX - rect.left;
+    targetY = event.clientY - rect.top;
+    isHovering = true;
+    startGlowLoop();
+  });
+
+  nav.addEventListener("pointerenter", () => {
+    isHovering = true;
+    startGlowLoop();
+  });
+
+  nav.addEventListener("pointerleave", () => {
+    isHovering = false;
+    recenterTarget();
+    startGlowLoop();
+  });
+
+  window.addEventListener("resize", () => {
+    if (!isHovering) {
+      recenterTarget();
+      startGlowLoop();
+    }
   });
 }
 

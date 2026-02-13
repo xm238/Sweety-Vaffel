@@ -15,8 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
       rel="stylesheet" />
 
-    <link rel="stylesheet" href="style.css?v=20260213g" />
-    <script defer src="script.js?v=20260213g"></script>
+    <link rel="stylesheet" href="style.css?v=20260213i" />
+    <script defer src="script.js?v=20260213i"></script>
   </head>
   <body>
     <div class="bg-grain" aria-hidden="true"></div>
@@ -27,8 +27,9 @@
           <span class="brand-name">Sweety Vaffel</span>
         </a>
 
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
-          Menu
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+          <span class="menu-toggle-bars" aria-hidden="true"></span>
+          <span class="sr-only">Menu</span>
         </button>
 
         <div id="main-nav" class="nav-links">
@@ -221,23 +222,53 @@
 
       <section class="contact shell reveal" id="iletisim">
         <article class="contact-card">
-          <p class="eyebrow">Iletisim</p>
-          <h2>Tek dokunusla ulasin</h2>
-          <ul>
-            <li><strong>Telefon:</strong> <a href="tel:+905319612520">+90 531 961 2520</a></li>
-            <li><strong>Adres:</strong> Kavakli, Olimpiyat Cd. NO:33 C BLOK, Beylikduzu / Istanbul</li>
-            <li><strong>Saatler:</strong> Her gun 12:00 - 00:00</li>
-          </ul>
+          <div class="contact-layout">
+            <div class="contact-main">
+              <p class="eyebrow">Iletisim</p>
+              <h2>Tek dokunusla ulasin</h2>
+              <ul>
+                <li><strong>Telefon:</strong> <a href="tel:+905319612520">+90 531 961 2520</a></li>
+                <li><strong>Adres:</strong> Kavakli, Olimpiyat Cd. NO:33 C BLOK, Beylikduzu / Istanbul</li>
+                <li><strong>Saatler:</strong> Her gun 12:00 - 00:00</li>
+              </ul>
 
-          <div class="contact-actions">
-            <a class="btn btn-solid" href="tel:+905319612520">Hemen Ara</a>
-            <a
-              class="btn btn-outline"
-              href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC"
-              target="_blank"
-              rel="noreferrer">
-              Yol Tarifi Al
-            </a>
+              <div class="contact-actions">
+                <a class="btn btn-solid" href="tel:+905319612520">Hemen Ara</a>
+                <a
+                  class="btn btn-outline"
+                  href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC"
+                  target="_blank"
+                  rel="noreferrer">
+                  Yol Tarifi Al
+                </a>
+              </div>
+            </div>
+
+            <aside class="contact-side" aria-label="Hizli bilgiler">
+              <div class="contact-side-card">
+                <p>Hizli Destek</p>
+                <h3>WhatsApp ile 1 dk icinde ulasin</h3>
+                <a
+                  class="btn btn-solid btn-wa"
+                  href="https://wa.me/905319612520?text=Merhaba%21%20Sweety%20Vaffel%20sitesinden%20geliyorum.%20Bilgi%20almak%20istiyorum."
+                  target="_blank"
+                  rel="noreferrer">
+                  <span class="wa-icon" aria-hidden="true">
+                    <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M13.601 2.326A7.854 7.854 0 0 0 8.002 0a7.94 7.94 0 0 0-6.774 12.082L0 16l4.047-1.06a7.95 7.95 0 0 0 3.95 1.008h.003A7.94 7.94 0 0 0 16 8a7.9 7.9 0 0 0-2.399-5.674zM8 14.61a6.6 6.6 0 0 1-3.357-.919l-.24-.142-2.402.63.642-2.34-.156-.24A6.6 6.6 0 0 1 1.39 8C1.39 4.35 4.35 1.39 8 1.39S14.61 4.35 14.61 8 11.65 14.61 8 14.61zm3.625-4.963c-.197-.099-1.166-.575-1.346-.642s-.311-.099-.443.099-.51.642-.626.775-.23.148-.428.05a5.38 5.38 0 0 1-1.58-.974A5.98 5.98 0 0 1 6.1 7.58c-.115-.197-.012-.304.086-.402.09-.09.197-.23.296-.345.099-.115.132-.197.198-.33.066-.132.033-.247-.017-.345-.05-.099-.443-1.067-.608-1.462-.16-.384-.323-.332-.443-.339-.115-.006-.247-.008-.378-.008-.132 0-.345.05-.526.247-.181.197-.69.674-.69 1.644s.706 1.908.804 2.04c.099.132 1.39 2.123 3.369 2.976.471.203.839.324 1.126.415.473.15.903.129 1.242.078.379-.057 1.166-.476 1.33-.936.164-.46.164-.853.115-.936-.05-.082-.181-.132-.378-.23z"/>
+                    </svg>
+                  </span>
+                  <span>Mesaj Gonder</span>
+                </a>
+              </div>
+
+              <div class="contact-quick-grid">
+                <article><span>Servis</span><strong>Salon + Paket</strong></article>
+                <article><span>Konum</span><strong>Beylikduzu</strong></article>
+                <article><span>Acik</span><strong>Her gun</strong></article>
+                <article><span>Ortalama</span><strong>7-10 dk</strong></article>
+              </div>
+            </aside>
           </div>
         </article>
       </section>

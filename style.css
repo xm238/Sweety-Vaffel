@@ -114,7 +114,7 @@ p {
 .nav {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  overflow: visible;
   min-height: 70px;
   display: flex;
   align-items: center;
@@ -149,7 +149,7 @@ p {
   height: 140%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
   transform: skewX(-18deg);
-  animation: nav-sweep 6.8s ease-in-out infinite;
+  animation: nav-sweep 10.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   z-index: 0;
   pointer-events: none;
 }
@@ -191,9 +191,54 @@ p {
   background: rgba(255, 255, 255, 0.04);
   color: var(--text);
   border-radius: 999px;
-  padding: 0.45rem 0.88rem;
+  width: 2.7rem;
+  height: 2.25rem;
+  padding: 0;
   cursor: pointer;
   font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.menu-toggle-bars,
+.menu-toggle-bars::before,
+.menu-toggle-bars::after {
+  content: "";
+  display: block;
+  width: 1.18rem;
+  height: 2px;
+  background: #f6edf9;
+  border-radius: 999px;
+  transition: transform 360ms ease, opacity 260ms ease, width 260ms ease;
+}
+
+.menu-toggle-bars {
+  position: relative;
+}
+
+.menu-toggle-bars::before {
+  position: absolute;
+  left: 0;
+  top: -0.36rem;
+}
+
+.menu-toggle-bars::after {
+  position: absolute;
+  left: 0;
+  top: 0.36rem;
+}
+
+.nav.menu-open .menu-toggle-bars {
+  transform: rotate(45deg);
+}
+
+.nav.menu-open .menu-toggle-bars::before {
+  transform: translateY(0.36rem) rotate(90deg);
+}
+
+.nav.menu-open .menu-toggle-bars::after {
+  opacity: 0;
+  transform: translateY(-0.28rem);
 }
 
 .nav-links {
@@ -309,6 +354,10 @@ p {
   display: grid;
   gap: 1rem;
   align-items: start;
+}
+
+main {
+  padding-bottom: 0.5rem;
 }
 
 .hero-copy,
@@ -590,6 +639,16 @@ p {
   margin-right: 0;
 }
 
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.95rem;
+}
+
+.contact-main {
+  min-width: 0;
+}
+
 .contact-card h2 {
   margin: 0.45rem 0 0;
   font-size: clamp(1.6rem, 5vw, 2.4rem);
@@ -611,6 +670,66 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 0.6rem;
+}
+
+.contact-side {
+  display: grid;
+  gap: 0.7rem;
+  align-content: start;
+}
+
+.contact-side-card {
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  padding: 0.95rem;
+  display: grid;
+  gap: 0.62rem;
+}
+
+.contact-side-card p {
+  font-size: 0.72rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: #f6cde3;
+}
+
+.contact-side-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.contact-side-card .btn {
+  width: 100%;
+}
+
+.contact-quick-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.58rem;
+}
+
+.contact-quick-grid article {
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.17);
+  background: rgba(7, 5, 11, 0.26);
+  padding: 0.7rem;
+  display: grid;
+  gap: 0.2rem;
+}
+
+.contact-quick-grid span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #f5cadf;
+}
+
+.contact-quick-grid strong {
+  font-size: 0.86rem;
+  color: #f6f0fb;
 }
 
 .map-section {
@@ -697,8 +816,8 @@ p {
 }
 
 .mobile-dock a:last-child {
-  color: #ffe6f4;
-  background: rgba(255, 255, 255, 0.08);
+  color: inherit;
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .reveal {
@@ -821,7 +940,7 @@ p {
   }
 
   .nav::after {
-    animation-duration: 5.4s;
+    animation-duration: 8.2s;
   }
 
   .brand {
@@ -834,7 +953,8 @@ p {
 
   .menu-toggle {
     margin-left: auto;
-    padding: 0.52rem 0.95rem;
+    width: 2.7rem;
+    height: 2.3rem;
     border-color: rgba(255, 255, 255, 0.3);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.05) inset;
   }
@@ -848,19 +968,24 @@ p {
 
   .nav.menu-open .nav-links {
     margin-top: 0.45rem;
-    padding-top: 0.6rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 0.48rem;
+    border: 1px solid rgba(255, 255, 255, 0.17);
+    border-radius: 14px;
+    background: rgba(13, 10, 21, 0.74);
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    width: min(92vw, 360px);
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .nav.menu-open .nav-links a {
     text-align: center;
-    border-radius: 999px;
-    padding: 0.48rem 0.35rem;
+    border-radius: 10px;
+    padding: 0.56rem 0.35rem;
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.16);
-    font-size: 0.83rem;
+    font-size: 0.86rem;
   }
 
   .hero-copy h1 {
@@ -873,6 +998,23 @@ p {
 
   .hero-media {
     min-height: 280px;
+  }
+
+  .floating-wa {
+    width: 3.3rem;
+    height: 3.3rem;
+    right: 0.85rem;
+    bottom: calc(4.95rem + env(safe-area-inset-bottom));
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+  }
+
+  .mobile-dock {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: min(460px, calc(100% - 1rem));
+  }
+
+  .mobile-dock a {
+    font-size: 0.84rem;
   }
 }
 
@@ -901,6 +1043,22 @@ p {
 
   .contact-card {
     width: 100%;
+  }
+
+  .contact-layout {
+    grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+    align-items: stretch;
+  }
+
+  .contact-main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .contact-side-card {
+    min-height: 100%;
+    align-content: center;
   }
 
   .map-card iframe {
