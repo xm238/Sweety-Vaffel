@@ -1,41 +1,40 @@
-// Change this value if the business WhatsApp number is updated.
+// Update this value if the business WhatsApp number changes.
 const WA_PHONE = "905319612520";
 
-const GENERAL_WA_MESSAGE = "Merhaba! Sweety Vaffel sitesinden geliyorum. Bilgi almak istiyorum.";
-
-function buildWhatsAppUrl(message) {
+/**
+ * Builds a WhatsApp deep-link with encoded message text.
+ */
+function buildWhatsAppLink(message) {
   return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`;
 }
 
-function initGeneralWhatsAppLinks() {
-  const generalLinks = document.querySelectorAll("[data-wa-general]");
-  const url = buildWhatsAppUrl(GENERAL_WA_MESSAGE);
-
-  generalLinks.forEach((link) => {
-    link.setAttribute("href", url);
-    link.setAttribute("target", "_blank");
-    link.setAttribute("rel", "noreferrer noopener");
-  });
-}
-
+/**
+ * Sets order links for each menu item card.
+ * Required format:
+ * https://wa.me/905319612520?text=Merhaba%21%20Sweety%20Vaffel%20sitesinden%20geliyorum.%20[ITEM_NAME]%20sipari%C5%9F%20vermek%20istiyorum.
+ */
 function initOrderButtons() {
-  const orderButtons = document.querySelectorAll(".order-btn[data-order-item]");
+  const orderButtons = document.querySelectorAll(".order-btn[data-item-name]");
 
   orderButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const itemName = button.getAttribute("data-order-item") || "ürün";
-      const message = `Merhaba! Sweety Vaffel sitesinden geliyorum. ${itemName} sipariş vermek istiyorum.`;
-      const url = buildWhatsAppUrl(message);
-      window.open(url, "_blank", "noopener,noreferrer");
-    });
+    const itemName = button.getAttribute("data-item-name") || "Urun";
+    const message = `Merhaba! Sweety Vaffel sitesinden geliyorum. ${itemName} sipariş vermek istiyorum.`;
+    const href = buildWhatsAppLink(message);
+
+    button.setAttribute("href", href);
+    button.setAttribute("target", "_blank");
+    button.setAttribute("rel", "noreferrer noopener");
   });
 }
 
+/**
+ * Scroll reveal animation with IntersectionObserver.
+ */
 function initRevealAnimations() {
-  const revealItems = document.querySelectorAll(".reveal");
+  const revealElements = document.querySelectorAll(".reveal");
 
   if (!("IntersectionObserver" in window)) {
-    revealItems.forEach((item) => item.classList.add("in-view"));
+    revealElements.forEach((el) => el.classList.add("is-visible"));
     return;
   }
 
@@ -46,38 +45,39 @@ function initRevealAnimations() {
           return;
         }
 
-        entry.target.classList.add("in-view");
+        entry.target.classList.add("is-visible");
         obs.unobserve(entry.target);
       });
     },
     {
-      root: null,
-      threshold: 0.16,
+      threshold: 0.15,
       rootMargin: "0px 0px -40px 0px"
     }
   );
 
-  revealItems.forEach((item) => observer.observe(item));
+  revealElements.forEach((el) => observer.observe(el));
 }
 
-function initMobileMenu() {
-  const nav = document.querySelector(".nav");
-  const toggle = document.querySelector(".menu-toggle");
+/**
+ * Mobile navigation toggle.
+ */
+function initMobileNavigation() {
+  const nav = document.querySelector(".navbar");
+  const toggle = document.querySelector(".nav-toggle");
 
   if (!nav || !toggle) {
     return;
   }
 
   toggle.addEventListener("click", () => {
-    const isExpanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!isExpanded));
-    nav.classList.toggle("menu-open", !isExpanded);
+    const expanded = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!expanded));
+    nav.classList.toggle("is-open", !expanded);
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-  initGeneralWhatsAppLinks();
   initOrderButtons();
   initRevealAnimations();
-  initMobileMenu();
+  initMobileNavigation();
 });

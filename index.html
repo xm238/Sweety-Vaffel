@@ -3,39 +3,45 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sweety Vaffel | Daily Operations Showcase</title>
+    <title>Sweety Vaffel | Final Polish</title>
     <meta
       name="description"
-      content="Sweety Vaffel Beylikdüzü için premium neon gece atmosferi, tatlı menü showcase ve hızlı WhatsApp sipariş deneyimi." />
-    <meta name="theme-color" content="#090714" />
+      content="Sweety Vaffel icin premium neon tasarim, duzgun responsive grid, hizli WhatsApp siparis ve yuksek donusum odakli demo." />
+    <meta name="theme-color" content="#140028" />
+
+    <!-- Typography: Update or replace font families here if needed -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
+
     <link rel="stylesheet" href="style.css" />
     <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="site-bg"></div>
-    <header class="topbar" id="top">
-      <nav class="nav shell" aria-label="Ana gezinme">
-        <a class="brand" href="#top" aria-label="Sweety Vaffel anasayfa">
-          <span class="brand-mark">SV</span>
-          <span class="brand-text">Sweety Vaffel</span>
+    <header class="site-header">
+      <nav class="navbar container" aria-label="Ana navigasyon">
+        <a class="brand" href="#top" aria-label="Sweety Vaffel ana sayfa">
+          <span class="brand__logo">SV</span>
+          <span class="brand__name">Sweety Vaffel</span>
         </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
-          Menü
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          Menu
         </button>
-        <div class="nav-links" id="main-menu">
-          <a href="#menu">Menü</a>
-          <a href="#mekan">Mekân</a>
-          <a href="#iletisim">İletişim</a>
+
+        <div id="nav-links" class="nav-links">
+          <a href="#menu">Menu</a>
+          <a href="#gallery">Mekan</a>
+          <a href="#contact">Iletisim</a>
         </div>
-        <div class="nav-actions">
-          <a class="pill-btn ghost" href="tel:+905319612520">Ara</a>
+
+        <div class="nav-cta">
+          <!-- Phone update: change number here and in script.js WA_PHONE -->
+          <a class="btn btn--ghost" href="tel:+905319612520">Ara</a>
           <a
-            class="pill-btn glow"
+            class="btn btn--primary"
             href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC"
             target="_blank"
             rel="noreferrer">
@@ -45,272 +51,264 @@
       </nav>
     </header>
 
-    <main>
-      <section class="hero shell">
-        <div class="hero-copy reveal">
-          <p class="hero-kicker">Beylikdüzü Gece Tatlı Noktası</p>
-          <h1 class="flicker">Neon Işıkta Daily Operations Show</h1>
-          <p class="hero-description">
-            Şık tasarım, hızlı servis ve premium tatlı sunumuyla günün en yoğun saatlerinde bile
-            yüksek dönüşüm odaklı bir deneyim.
+    <main id="top">
+      <section class="hero container reveal">
+        <div class="hero__content">
+          <p class="hero__kicker">Beylikduzu Neon Dessert Lounge</p>
+          <h1 class="hero__title flicker">Neon Isikta Daily Operations Show</h1>
+          <p class="hero__text">
+            Yuksek donusum odakli premium sunum, hizli siparis akisi ve mobilde kusursuz kullanim.
           </p>
-          <div class="hero-cta">
-            <a class="cta cta-primary" href="#menu">Menüyü Keşfet</a>
-            <a class="cta cta-secondary" data-wa-general href="#">WhatsApp'tan Sor</a>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#menu">Menuyu Kesfet</a>
+            <a
+              class="btn btn--ghost"
+              href="https://wa.me/905319612520?text=Merhaba%21%20Sweety%20Vaffel%20sitesinden%20genel%20bir%20sorum%20var."
+              target="_blank"
+              rel="noreferrer">
+              WhatsApp
+            </a>
           </div>
-          <ul class="hero-metrics" aria-label="Mekân özeti">
-            <li>
-              <strong>4.9</strong>
-              <span>Misafir Puanı</span>
-            </li>
-            <li>
-              <strong>00:00</strong>
-              <span>Kapanış Saati</span>
-            </li>
-            <li>
-              <strong>7 dk</strong>
-              <span>Ortalama Sipariş Hazırlama</span>
-            </li>
+          <ul class="hero__stats" aria-label="Metrikler">
+            <li><strong>4.9</strong><span>Misafir Puani</span></li>
+            <li><strong>00:00</strong><span>Kapanis</span></li>
+            <li><strong>7 dk</strong><span>Hazirlama</span></li>
           </ul>
         </div>
-        <article class="hero-media reveal">
+
+        <article class="hero__media">
           <img
-            src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=1600&q=80"
-            alt="Neon ışıklı tatlı kafe iç mekanı"
+            src="https://via.placeholder.com/1200x800/8A2BE2/FFFFFF?text=Neon+Cafe+Atmosphere"
+            alt="Neon cafe atmosfer gorseli"
             fetchpriority="high" />
-          <div class="hero-media-overlay">
-            <p>Gecenin enerjisi: pink + purple neon</p>
-          </div>
         </article>
       </section>
 
-      <section class="menu-section shell" id="menu">
-        <header class="section-head reveal">
-          <p class="section-kicker">Interactive Menü</p>
-          <h2>En Çok Satanlar ve Yeni Lezzetler</h2>
-          <p>
-            Kart yapısı, net fiyat hiyerarşisi ve tek dokunuşla WhatsApp siparişi ile yüksek dönüşüm.
-          </p>
+      <section id="menu" class="menu-section container reveal">
+        <header class="section-head">
+          <p class="section-head__kicker">Interactive Menu</p>
+          <h2>En Cok Satanlar ve Yeni Lezzetler</h2>
+          <p>Tek dokunusla WhatsApp siparis sistemiyle temiz, hizli ve premium kart deneyimi.</p>
         </header>
 
-        <!-- Fiyat güncelleme notu: Her ürünün fiyatını ilgili .menu-price metninden düzenleyebilirsiniz. -->
-        <div class="menu-grid">
-          <article class="menu-card featured reveal">
-            <figure class="menu-media">
-              <span class="badge best">En Çok Satan</span>
+        <!-- Price update area: you can change .menu-item__price text values safely -->
+        <div class="menu-items">
+          <article class="menu-item-card">
+            <figure class="menu-item__media">
+              <span class="menu-badge menu-badge--best">En Cok Satan</span>
               <img
-                src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=1200&q=80"
-                alt="Çilekli çikolatalı waffle"
+                src="https://via.placeholder.com/400x300/FF69B4/FFFFFF?text=Berry+Dream+Waffle"
+                alt="Berry Dream Waffle"
                 loading="lazy" />
             </figure>
-            <div class="menu-content">
+            <div class="menu-item__body">
               <h3>Berry Dream Waffle</h3>
-              <p>Taze çilek, muz, çikolata sos ve vanilya kreması ile imza sunum.</p>
-              <div class="menu-row">
-                <span class="menu-price">299 TL</span>
-                <button class="order-btn" type="button" data-order-item="Berry Dream Waffle">
-                  Sipariş Ver
-                </button>
+              <p>Cilek, muz, cikolata sos ve vanilya kremasi ile imza tat.</p>
+              <div class="menu-item__footer">
+                <span class="menu-item__price">299 TL</span>
+                <a class="order-btn" href="#" data-item-name="Berry Dream Waffle">Siparis Ver</a>
               </div>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <figure class="menu-media">
-              <span class="badge new">Yeni</span>
+          <article class="menu-item-card">
+            <figure class="menu-item__media">
+              <span class="menu-badge menu-badge--new">Yeni</span>
               <img
-                src="https://images.unsplash.com/photo-1505253216365-4e35d6a6e5b8?auto=format&fit=crop&w=1200&q=80"
-                alt="Antep fıstıklı waffle"
+                src="https://via.placeholder.com/400x300/FF69B4/FFFFFF?text=Pistachio+Crush"
+                alt="Pistachio Crush"
                 loading="lazy" />
             </figure>
-            <div class="menu-content">
+            <div class="menu-item__body">
               <h3>Pistachio Crush</h3>
-              <p>Antep fıstığı kreması, beyaz çikolata ve çilek ile dengeli premium tat.</p>
-              <div class="menu-row">
-                <span class="menu-price">319 TL</span>
-                <button class="order-btn" type="button" data-order-item="Pistachio Crush">
-                  Sipariş Ver
-                </button>
+              <p>Antep fistik ezmesi, beyaz cikolata ve cilek notalari.</p>
+              <div class="menu-item__footer">
+                <span class="menu-item__price">319 TL</span>
+                <a class="order-btn" href="#" data-item-name="Pistachio Crush">Siparis Ver</a>
               </div>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <figure class="menu-media">
-              <span class="badge best">En Çok Satan</span>
+          <article class="menu-item-card">
+            <figure class="menu-item__media">
+              <span class="menu-badge menu-badge--best">En Cok Satan</span>
               <img
-                src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80"
-                alt="Biscoff cheesecake dilimi"
+                src="https://via.placeholder.com/400x300/FF69B4/FFFFFF?text=Biscoff+Cheesecake"
+                alt="Biscoff Cheesecake"
                 loading="lazy" />
             </figure>
-            <div class="menu-content">
+            <div class="menu-item__body">
               <h3>Biscoff Cheesecake</h3>
-              <p>Karamelize bisküvili taban, yumuşak krem peynir katmanı ve özel sos.</p>
-              <div class="menu-row">
-                <span class="menu-price">259 TL</span>
-                <button class="order-btn" type="button" data-order-item="Biscoff Cheesecake">
-                  Sipariş Ver
-                </button>
+              <p>Kremamsi doku, biskuvi tabani ve karamel bitis.</p>
+              <div class="menu-item__footer">
+                <span class="menu-item__price">259 TL</span>
+                <a class="order-btn" href="#" data-item-name="Biscoff Cheesecake">Siparis Ver</a>
               </div>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <figure class="menu-media">
-              <span class="badge new">Yeni</span>
+          <article class="menu-item-card">
+            <figure class="menu-item__media">
+              <span class="menu-badge menu-badge--new">Yeni</span>
               <img
-                src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=1200&q=80"
-                alt="Blueberry cheesecake"
+                src="https://via.placeholder.com/400x300/FF69B4/FFFFFF?text=Blueberry+Glow+Cake"
+                alt="Blueberry Glow Cake"
                 loading="lazy" />
             </figure>
-            <div class="menu-content">
+            <div class="menu-item__body">
               <h3>Blueberry Glow Cake</h3>
-              <p>Yaban mersini sosu, limonsu kreması ve ince bisküvi kırıntısı ile ferah bitiş.</p>
-              <div class="menu-row">
-                <span class="menu-price">269 TL</span>
-                <button class="order-btn" type="button" data-order-item="Blueberry Glow Cake">
-                  Sipariş Ver
-                </button>
+              <p>Yaban mersini sosu, yumusak krema ve ferah bitis.</p>
+              <div class="menu-item__footer">
+                <span class="menu-item__price">269 TL</span>
+                <a class="order-btn" href="#" data-item-name="Blueberry Glow Cake">Siparis Ver</a>
               </div>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <figure class="menu-media">
-              <span class="badge best">En Çok Satan</span>
+          <article class="menu-item-card">
+            <figure class="menu-item__media">
+              <span class="menu-badge menu-badge--best">En Cok Satan</span>
               <img
-                src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1200&q=80"
-                alt="Red velvet pasta"
+                src="https://via.placeholder.com/400x300/FF69B4/FFFFFF?text=Red+Velvet+Slice"
+                alt="Red Velvet Slice"
                 loading="lazy" />
             </figure>
-            <div class="menu-content">
+            <div class="menu-item__body">
               <h3>Red Velvet Slice</h3>
-              <p>Kadifemsi doku, hafif krem peynirli iç dolgusu ve yoğun görünüş.</p>
-              <div class="menu-row">
-                <span class="menu-price">239 TL</span>
-                <button class="order-btn" type="button" data-order-item="Red Velvet Slice">
-                  Sipariş Ver
-                </button>
+              <p>Yogun kakao, yumusak katman ve krem peynir dengesi.</p>
+              <div class="menu-item__footer">
+                <span class="menu-item__price">239 TL</span>
+                <a class="order-btn" href="#" data-item-name="Red Velvet Slice">Siparis Ver</a>
               </div>
             </div>
           </article>
 
-          <article class="menu-card reveal">
-            <figure class="menu-media">
-              <span class="badge new">Yeni</span>
+          <article class="menu-item-card">
+            <figure class="menu-item__media">
+              <span class="menu-badge menu-badge--new">Yeni</span>
               <img
-                src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1200&q=80"
-                alt="Tiramisu tabağı"
+                src="https://via.placeholder.com/400x300/FF69B4/FFFFFF?text=Tiramisu+Night+Cup"
+                alt="Tiramisu Night Cup"
                 loading="lazy" />
             </figure>
-            <div class="menu-content">
+            <div class="menu-item__body">
               <h3>Tiramisu Night Cup</h3>
-              <p>Espresso aromalı kek, mascarpone kreması ve kakao bitişiyle dengeli lezzet.</p>
-              <div class="menu-row">
-                <span class="menu-price">229 TL</span>
-                <button class="order-btn" type="button" data-order-item="Tiramisu Night Cup">
-                  Sipariş Ver
-                </button>
+              <p>Espresso aromasi, mascarpone kremasi ve kakao bitisi.</p>
+              <div class="menu-item__footer">
+                <span class="menu-item__price">229 TL</span>
+                <a class="order-btn" href="#" data-item-name="Tiramisu Night Cup">Siparis Ver</a>
               </div>
             </div>
           </article>
         </div>
       </section>
 
-      <section class="gallery-section shell" id="mekan">
-        <header class="section-head reveal">
-          <p class="section-kicker">Mekân Atmosferi</p>
-          <h2>Neon Night Gallery</h2>
-          <p>
-            Modern grid-masonry düzeniyle mekanı anlatan detay kareler. Mobilde akıcı, desktopta vurucu.
-          </p>
+      <section id="gallery" class="gallery-section container reveal">
+        <header class="section-head">
+          <p class="section-head__kicker">Mekandan Kareler</p>
+          <h2>Modern Neon Gallery</h2>
+          <p>Responsive CSS Grid yapisi ile salon, servis ve sunum detaylari.</p>
         </header>
-        <div class="masonry-grid">
-          <article class="masonry-item tall reveal">
+
+        <div class="gallery-grid">
+          <article class="gallery-item gallery-item--wide">
             <img
-              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=80"
-              alt="Neon kafe oturma alanı"
+              src="https://via.placeholder.com/800x400/8A2BE2/FFFFFF?text=Neon+Dining+Area"
+              alt="Neon dining area"
               loading="lazy" />
           </article>
-          <article class="masonry-item reveal">
+          <article class="gallery-item">
             <img
-              src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=1000&q=80"
-              alt="Kafe tezgah detay"
+              src="https://via.placeholder.com/400x300/FF69B4/FFFFFF?text=Signature+Counter"
+              alt="Signature counter"
               loading="lazy" />
           </article>
-          <article class="masonry-item reveal wide">
+          <article class="gallery-item gallery-item--tall">
             <img
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80"
-              alt="Sıcak kafe atmosferi"
+              src="https://via.placeholder.com/400x600/8A2BE2/FFFFFF?text=Sweet+Display"
+              alt="Sweet display"
               loading="lazy" />
           </article>
-          <article class="masonry-item reveal">
+          <article class="gallery-item">
             <img
-              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80"
-              alt="Masa üstü tatlı sunumu"
+              src="https://via.placeholder.com/400x300/FF69B4/FFFFFF?text=Cozy+Corner"
+              alt="Cozy corner"
               loading="lazy" />
           </article>
-          <article class="masonry-item tall reveal">
+          <article class="gallery-item">
             <img
-              src="https://images.unsplash.com/photo-1482275548304-a58859dc31b7?auto=format&fit=crop&w=1000&q=80"
-              alt="Neon ışıklı kafe dekoru"
+              src="https://via.placeholder.com/400x300/8A2BE2/FFFFFF?text=Night+Ambience"
+              alt="Night ambience"
               loading="lazy" />
           </article>
-          <article class="masonry-item reveal">
+          <article class="gallery-item gallery-item--wide">
             <img
-              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1000&q=80"
-              alt="Gece kafe dış görünümü"
+              src="https://via.placeholder.com/800x400/FF69B4/FFFFFF?text=Service+Moments"
+              alt="Service moments"
               loading="lazy" />
           </article>
         </div>
       </section>
 
-      <section class="contact-section shell" id="iletisim">
-        <article class="contact-card reveal">
-          <h2>Bugün Uğrayın, 1 Dokunuşla Ulaşın</h2>
-          <p>
-            Kavaklı, Olimpiyat Cd. NO:33 C BLOK, 34520 Beylikdüzü / İstanbul. Salon, paket ve hızlı
-            teslimat seçenekleri.
-          </p>
+      <section id="contact" class="contact-section container reveal">
+        <header class="section-head">
+          <p class="section-head__kicker">Quick Contact</p>
+          <h2>Tek Dokunusla Ulasin</h2>
+          <p>Kavakli, Olimpiyat Cd. NO:33 C BLOK, Beylikduzu / Istanbul</p>
+        </header>
+
+        <div class="contact-card">
+          <ul class="contact-list">
+            <li><strong>Telefon:</strong> <a href="tel:+905319612520">+90 531 961 2520</a></li>
+            <li><strong>Saatler:</strong> Her gun 12:00 - 00:00</li>
+            <li><strong>Servis:</strong> Salon, paket, teslimat</li>
+          </ul>
           <div class="contact-actions">
-            <a class="cta cta-primary" href="tel:+905319612520">Hemen Ara</a>
+            <a class="btn btn--primary" href="tel:+905319612520">Hemen Ara</a>
             <a
-              class="cta cta-secondary"
+              class="btn btn--ghost"
               href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC"
               target="_blank"
               rel="noreferrer">
               Yol Tarifi Al
             </a>
           </div>
-          <ul class="contact-points">
-            <li>Telefon: 0531 961 25 20</li>
-            <li>Çalışma: Her gün 12:00 - 00:00</li>
-            <li>Fiyat Aralığı: 200 TL - 400 TL</li>
-          </ul>
-        </article>
-        <article class="contact-image reveal">
-          <img
-            src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80"
-            alt="Kafe personeli tatlı servisi"
-            loading="lazy" />
-        </article>
+        </div>
       </section>
     </main>
 
-    <a class="floating-wa" data-wa-general href="#" aria-label="WhatsApp ile iletişime geç">
-      <span aria-hidden="true">WA</span>
-      <span>WhatsApp</span>
+    <!-- Floating WhatsApp CTA for general inquiries -->
+    <a
+      class="floating-whatsapp"
+      href="https://wa.me/905319612520?text=Merhaba%21%20Sweety%20Vaffel%20sitesinden%20genel%20bir%20sorum%20var."
+      target="_blank"
+      rel="noreferrer"
+      aria-label="WhatsApp genel sorular">
+      WA
     </a>
 
-    <aside class="mobile-dock" aria-label="Hızlı iletişim kısayolları">
+    <!-- Mobile quick actions: 1-tap phone + directions + WhatsApp -->
+    <aside class="mobile-quick-actions" aria-label="Hizli aksiyonlar">
       <a href="tel:+905319612520">Ara</a>
-      <a href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC" target="_blank" rel="noreferrer">Yol Tarifi</a>
-      <a data-wa-general href="#">WhatsApp</a>
+      <a
+        href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC"
+        target="_blank"
+        rel="noreferrer">
+        Yol Tarifi
+      </a>
+      <a
+        href="https://wa.me/905319612520?text=Merhaba%21%20Sweety%20Vaffel%20sitesinden%20genel%20bir%20sorum%20var."
+        target="_blank"
+        rel="noreferrer">
+        WhatsApp
+      </a>
     </aside>
 
-    <footer class="footer shell">
-      <p>Sweety Vaffel Daily Operations Demo</p>
-      <p>Neon night tasarım + mobil odaklı yüksek dönüşümlü sipariş deneyimi.</p>
+    <footer class="site-footer">
+      <div class="container">
+        <p>Sweety Vaffel Final Polish Demo</p>
+        <p>Neon premium UI + responsive grid + WhatsApp conversion flow</p>
+      </div>
     </footer>
   </body>
 </html>
