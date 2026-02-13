@@ -964,7 +964,7 @@ main {
 
 @media (max-width: 759px) {
   .header {
-    padding-top: 0.55rem;
+    padding-top: 0.48rem;
   }
 
   .nav {
@@ -977,11 +977,18 @@ main {
     align-items: center;
     background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(247, 236, 255, 0.94));
     box-shadow: 0 12px 30px rgba(93, 59, 120, 0.16);
+    transition: border-color 320ms ease, box-shadow 320ms ease;
   }
 
   .nav::after {
     animation-duration: 10.6s;
     opacity: 0.6;
+  }
+
+  .nav.is-scrolled {
+    transform: none;
+    border-color: rgba(126, 73, 157, 0.24);
+    box-shadow: 0 12px 30px rgba(93, 59, 120, 0.16);
   }
 
   .brand {
@@ -990,7 +997,7 @@ main {
   }
 
   .brand-name {
-    font-size: clamp(1.55rem, 8.9vw, 2rem);
+    font-size: clamp(1.34rem, 7.4vw, 1.72rem);
     line-height: 1;
   }
 
@@ -1005,53 +1012,69 @@ main {
   }
 
   .nav-links {
-    gap: 0.4rem;
+    gap: 0.18rem;
     margin-top: 0;
-    padding: 0;
-    border-top: none;
+    padding: 0.18rem 0 0;
+    border-top: 1px solid rgba(126, 73, 157, 0.14);
     grid-column: 1 / -1;
     width: 100%;
   }
 
   .nav.menu-open .nav-links {
-    margin-top: 0.4rem;
-    padding: 0.52rem;
-    border: 1px solid rgba(126, 73, 157, 0.2);
-    border-radius: 16px;
-    background: rgba(255, 255, 255, 0.92);
+    margin-top: 0.3rem;
+    padding: 0.06rem 0 0.1rem;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
     margin-left: 0;
     margin-right: 0;
     transform-origin: top center;
-    animation: mobile-menu-in 260ms cubic-bezier(0.2, 0.8, 0.2, 1);
+    animation: mobile-menu-in 360ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 
   .nav.menu-open .nav-links a {
-    text-align: center;
-    border-radius: 12px;
-    padding: 0.66rem 0.4rem;
-    background: rgba(249, 241, 255, 0.9);
-    border: 1px solid rgba(126, 73, 157, 0.2);
-    font-size: 0.93rem;
-    letter-spacing: 0.01em;
+    text-align: left;
+    border-radius: 10px;
+    padding: 0.5rem 0.56rem;
+    background: rgba(255, 255, 255, 0.62);
+    border: 1px solid transparent;
+    font-size: 0.91rem;
+    letter-spacing: 0.005em;
+    font-weight: 700;
+  }
+
+  .nav.menu-open .nav-links a:hover {
+    background: rgba(249, 241, 255, 0.95);
+    border-color: rgba(126, 73, 157, 0.2);
   }
 
   .hero {
-    padding-top: 1rem;
-    gap: 0.8rem;
+    padding-top: 0.86rem;
+    gap: 0.72rem;
   }
 
   .hero-copy {
-    order: 2;
-    padding: 1rem 0.95rem;
+    order: 1;
+    padding: 0.95rem 0.9rem;
   }
 
   .hero-media {
-    order: 1;
-    min-height: 220px;
-    max-height: 250px;
+    order: 2;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: 4 / 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(247, 236, 255, 0.82), rgba(255, 255, 255, 0.95));
+  }
+
+  .hero-media img {
+    object-fit: contain;
+    object-position: center top;
   }
 
   .hero-kicker {
@@ -1105,7 +1128,7 @@ main {
     left: 0.72rem;
     right: 0.72rem;
     bottom: 0.72rem;
-    padding: 0.52rem 0.58rem;
+    padding: 0.46rem 0.52rem;
   }
 
   .media-note strong {
@@ -1582,17 +1605,26 @@ function initMobileMenu() {
 
 function initHeaderMotion() {
   const nav = document.querySelector(".nav");
+  const mobileQuery = window.matchMedia("(max-width: 759px)");
+  const canTrackPointer = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 
   if (!nav) {
     return;
   }
 
   const onScroll = () => {
+    if (mobileQuery.matches) {
+      nav.classList.remove("is-scrolled");
+      return;
+    }
     nav.classList.toggle("is-scrolled", window.scrollY > 16);
   };
 
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+  if (typeof mobileQuery.addEventListener === "function") {
+    mobileQuery.addEventListener("change", onScroll);
+  }
 
   let isHovering = false;
   let rafId = 0;
@@ -1632,6 +1664,12 @@ function initHeaderMotion() {
 
   recenterTarget();
   startGlowLoop();
+
+  if (!canTrackPointer || mobileQuery.matches) {
+    nav.style.setProperty("--mouse-x", `${targetX.toFixed(2)}px`);
+    nav.style.setProperty("--mouse-y", `${targetY.toFixed(2)}px`);
+    return;
+  }
 
   nav.addEventListener("pointermove", (event) => {
     const rect = nav.getBoundingClientRect();
