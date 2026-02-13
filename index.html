@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Sacramento&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet" />
 
     <style>
@@ -187,23 +187,28 @@ p {
 
 .brand {
   display: inline-flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 0.35rem;
   font-weight: 700;
   margin-right: 0.45rem;
 }
 
 .brand-name {
-  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
-  font-weight: 800;
-  line-height: 1;
-  color: #431758;
-  background: linear-gradient(100deg, #4b1a63, #ff4d8d, #6928a6, #4b1a63);
-  background-size: 250% 100%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: brand-shimmer 10s linear infinite;
+  font-family: "Sacramento", cursive;
+  font-size: clamp(2.06rem, 3.5vw, 2.86rem);
+  font-weight: 400;
+  line-height: 0.86;
+  letter-spacing: 0;
+  white-space: nowrap;
+  color: #ff4f9c;
+  background: none;
+  -webkit-text-fill-color: currentColor;
+  text-shadow:
+    0 0 1px rgba(255, 255, 255, 0.94),
+    0 0 6px rgba(255, 119, 186, 0.85),
+    0 0 15px rgba(255, 79, 156, 0.64),
+    0 0 26px rgba(255, 79, 156, 0.45);
+  animation: logo-neon-pulse 3.8s ease-in-out infinite;
 }
 
 .menu-toggle {
@@ -914,6 +919,24 @@ main {
   }
 }
 
+@keyframes logo-neon-pulse {
+  0%,
+  100% {
+    text-shadow:
+      0 0 1px rgba(255, 255, 255, 0.94),
+      0 0 6px rgba(255, 119, 186, 0.8),
+      0 0 15px rgba(255, 79, 156, 0.58),
+      0 0 24px rgba(255, 79, 156, 0.42);
+  }
+  50% {
+    text-shadow:
+      0 0 1px rgba(255, 255, 255, 0.97),
+      0 0 9px rgba(255, 119, 186, 0.92),
+      0 0 19px rgba(255, 79, 156, 0.72),
+      0 0 30px rgba(255, 79, 156, 0.55);
+  }
+}
+
 @media (min-width: 760px) {
   .menu-toggle {
     display: none;
@@ -997,8 +1020,8 @@ main {
   }
 
   .brand-name {
-    font-size: clamp(1.34rem, 7.4vw, 1.72rem);
-    line-height: 1;
+    font-size: clamp(1.86rem, 11vw, 2.52rem);
+    line-height: 0.9;
   }
 
   .menu-toggle {
