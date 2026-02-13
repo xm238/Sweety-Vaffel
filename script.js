@@ -1,40 +1,28 @@
 // Update this value if the business WhatsApp number changes.
 const WA_PHONE = "905319612520";
 
-/**
- * Builds a WhatsApp deep-link with encoded message text.
- */
 function buildWhatsAppLink(message) {
   return `https://wa.me/${WA_PHONE}?text=${encodeURIComponent(message)}`;
 }
 
-/**
- * Sets order links for each menu item card.
- * Required format:
- * https://wa.me/905319612520?text=Merhaba%21%20Sweety%20Vaffel%20sitesinden%20geliyorum.%20[ITEM_NAME]%20sipari%C5%9F%20vermek%20istiyorum.
- */
 function initOrderButtons() {
   const orderButtons = document.querySelectorAll(".order-btn[data-item-name]");
 
   orderButtons.forEach((button) => {
     const itemName = button.getAttribute("data-item-name") || "Urun";
     const message = `Merhaba! Sweety Vaffel sitesinden geliyorum. ${itemName} sipariş vermek istiyorum.`;
-    const href = buildWhatsAppLink(message);
 
-    button.setAttribute("href", href);
+    button.setAttribute("href", buildWhatsAppLink(message));
     button.setAttribute("target", "_blank");
     button.setAttribute("rel", "noreferrer noopener");
   });
 }
 
-/**
- * Scroll reveal animation with IntersectionObserver.
- */
-function initRevealAnimations() {
-  const revealElements = document.querySelectorAll(".reveal");
+function initReveal() {
+  const sections = document.querySelectorAll(".reveal");
 
   if (!("IntersectionObserver" in window)) {
-    revealElements.forEach((el) => el.classList.add("is-visible"));
+    sections.forEach((section) => section.classList.add("is-visible"));
     return;
   }
 
@@ -50,34 +38,31 @@ function initRevealAnimations() {
       });
     },
     {
-      threshold: 0.15,
+      threshold: 0.16,
       rootMargin: "0px 0px -40px 0px"
     }
   );
 
-  revealElements.forEach((el) => observer.observe(el));
+  sections.forEach((section) => observer.observe(section));
 }
 
-/**
- * Mobile navigation toggle.
- */
-function initMobileNavigation() {
-  const nav = document.querySelector(".navbar");
-  const toggle = document.querySelector(".nav-toggle");
+function initMobileMenu() {
+  const nav = document.querySelector(".nav");
+  const toggle = document.querySelector(".menu-toggle");
 
   if (!nav || !toggle) {
     return;
   }
 
   toggle.addEventListener("click", () => {
-    const expanded = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!expanded));
-    nav.classList.toggle("is-open", !expanded);
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    nav.classList.toggle("menu-open", !isOpen);
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
   initOrderButtons();
-  initRevealAnimations();
-  initMobileNavigation();
+  initReveal();
+  initMobileMenu();
 });
