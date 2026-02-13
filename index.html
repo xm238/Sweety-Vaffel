@@ -3,921 +3,314 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sweety Vaffel | Kafe & Tatlı</title>
+    <title>Sweety Vaffel | Daily Operations Showcase</title>
     <meta
       name="description"
-      content="Sweety Vaffel, Beylikdüzü'nde pembe neon atmosferi, bol soslu waffle'lar ve cheesecake'lerle öne çıkan tatlı kafesi. Dine-in, takeaway ve temassız teslimat." />
+      content="Sweety Vaffel Beylikdüzü için premium neon gece atmosferi, tatlı menü showcase ve hızlı WhatsApp sipariş deneyimi." />
+    <meta name="theme-color" content="#090714" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
       rel="stylesheet" />
-    <style>
-      :root {
-        --bg: #fff6f8;
-        --ink: #1b0c12;
-        --muted: #6a4b56;
-        --hot: #ff3b8d;
-        --hot-2: #ff6fb1;
-        --cream: #ffeef5;
-        --pistachio: #7bcf9a;
-        --chocolate: #6a3c2f;
-        --sunset: #ffb3c8;
-        --shadow: 0 20px 60px rgba(29, 8, 20, 0.18);
-      }
-
-      * {
-        box-sizing: border-box;
-      }
-
-      body {
-        margin: 0;
-        font-family: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
-        color: var(--ink);
-        background: radial-gradient(1200px 800px at 20% -10%, #ffd6e7 0%, transparent 60%),
-          radial-gradient(900px 700px at 100% 10%, #ffdfe9 0%, transparent 55%),
-          var(--bg);
-      }
-
-      img {
-        max-width: 100%;
-        display: block;
-      }
-
-      a {
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .page {
-        overflow-x: hidden;
-      }
-
-      .nav {
-        position: sticky;
-        top: 0;
-        z-index: 20;
-        background: rgba(255, 246, 248, 0.96);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid rgba(255, 59, 141, 0.12);
-        box-shadow: 0 10px 26px rgba(255, 59, 141, 0.08);
-      }
-
-      .nav-inner {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 16px 24px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 16px;
-      }
-
-      .brand {
-        display: flex;
-        align-items: center;
-        font-weight: 700;
-        letter-spacing: 0.3px;
-      }
-
-      .brand span {
-        font-family: "Playfair Display", serif;
-        font-size: 22px;
-      }
-
-      .nav-links {
-        display: flex;
-        gap: 18px;
-        font-weight: 600;
-        color: var(--muted);
-      }
-
-      .nav-links a:hover {
-        color: var(--hot);
-      }
-
-      .nav-call {
-        font-weight: 600;
-        color: var(--hot);
-        background: white;
-        border: 1px solid rgba(255, 59, 141, 0.25);
-        padding: 8px 14px;
-        border-radius: 999px;
-        white-space: nowrap;
-      }
-
-      .cta {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 8px;
-        padding: 12px 20px;
-        border-radius: 999px;
-        border: 1px solid transparent;
-        font-weight: 600;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-      }
-
-      .cta.primary {
-        background: linear-gradient(135deg, var(--hot), var(--hot-2));
-        color: white;
-        box-shadow: 0 18px 40px rgba(255, 59, 141, 0.3);
-      }
-
-      .cta.ghost {
-        border-color: rgba(255, 59, 141, 0.35);
-        color: var(--hot);
-        background: white;
-      }
-
-      .cta:hover {
-        transform: translateY(-2px);
-      }
-
-      .hero {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 56px 24px 80px;
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 32px;
-        align-items: start;
-        position: relative;
-      }
-
-      .hero::before {
-        content: "";
-        position: absolute;
-        inset: 40% 5% auto 5%;
-        height: 320px;
-        border-radius: 999px;
-        background: radial-gradient(circle, rgba(255, 111, 177, 0.4), transparent 70%);
-        filter: blur(40px);
-        z-index: 0;
-      }
-
-      .hero-copy {
-        grid-column: span 6;
-        position: relative;
-        z-index: 1;
-        padding-top: 6px;
-      }
-
-      .hero-eyebrow {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        padding: 6px 14px;
-        border-radius: 999px;
-        background: white;
-        color: var(--hot);
-        font-weight: 600;
-        box-shadow: var(--shadow);
-      }
-
-      .hero h1 {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(36px, 4vw, 56px);
-        margin: 18px 0 12px;
-        line-height: 1.08;
-      }
-
-      .hero p {
-        font-size: 17px;
-        color: var(--muted);
-        margin-bottom: 24px;
-      }
-
-      .hero-actions {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .stats {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-        gap: 12px;
-        margin-top: 28px;
-      }
-
-      .stat {
-        background: white;
-        padding: 14px 16px;
-        border-radius: 16px;
-        box-shadow: var(--shadow);
-        display: grid;
-        gap: 4px;
-      }
-
-      .stat strong {
-        font-size: 18px;
-      }
-
-      .hero-media {
-        grid-column: span 6;
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-card {
-        border-radius: 28px;
-        overflow: hidden;
-        position: relative;
-        box-shadow: var(--shadow);
-      }
-
-      .hero-card img {
-        width: 100%;
-        height: 480px;
-        object-fit: cover;
-      }
-
-      .hero-card .overlay {
-        position: absolute;
-        inset: 0;
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 100%);
-      }
-
-      .hero-card .tag {
-        position: absolute;
-        left: 24px;
-        bottom: 24px;
-        padding: 10px 16px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.9);
-        font-weight: 600;
-      }
-
-      .grid-mosaic {
-        display: grid;
-        grid-template-columns: repeat(12, 1fr);
-        gap: 16px;
-        grid-auto-flow: dense;
-        grid-auto-rows: var(--row, 70px);
-      }
-
-      .mosaic-item {
-        border-radius: 18px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        background: white;
-      }
-
-      .mosaic-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .w-3 { grid-column: span 3; }
-      .w-4 { grid-column: span 4; }
-      .w-5 { grid-column: span 5; }
-      .w-6 { grid-column: span 6; }
-      .w-7 { grid-column: span 7; }
-      .w-8 { grid-column: span 8; }
-      .h-2 { grid-row: span 2; }
-      .h-3 { grid-row: span 3; }
-      .h-4 { grid-row: span 4; }
-      .h-5 { grid-row: span 5; }
-      .h-6 { grid-row: span 6; }
-
-      .collage {
-        --row: 70px;
-        margin-top: 18px;
-      }
-
-      .hero-mosaic {
-        grid-column: 1 / -1;
-        margin-top: 24px;
-      }
-
-      .section {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 72px 24px;
-      }
-
-      .section h2 {
-        font-family: "Playfair Display", serif;
-        font-size: clamp(28px, 3vw, 40px);
-        margin-bottom: 10px;
-      }
-
-      .section p.lead {
-        color: var(--muted);
-        margin-bottom: 32px;
-      }
-
-      .menu-mosaic {
-        --row: 80px;
-      }
-
-      .menu-card {
-        background: white;
-        border-radius: 22px;
-        overflow: hidden;
-        box-shadow: var(--shadow);
-        display: grid;
-        grid-template-rows: minmax(0, 1fr) auto;
-        height: 100%;
-        min-height: 0;
-      }
-
-      .menu-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        min-height: 0;
-      }
-
-      .menu-card .content {
-        padding: 16px;
-        display: grid;
-        gap: 6px;
-        min-height: 112px;
-      }
-
-      .pill {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        padding: 6px 12px;
-        border-radius: 999px;
-        font-size: 12px;
-        font-weight: 600;
-        background: rgba(123, 207, 154, 0.2);
-        color: #2b6f46;
-      }
-
-      .vibe-mosaic {
-        --row: 90px;
-      }
-
-      .vibe-card {
-        border-radius: 22px;
-        overflow: hidden;
-        background: white;
-        box-shadow: var(--shadow);
-        position: relative;
-      }
-
-      .vibe-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .vibe-card span {
-        position: absolute;
-        bottom: 16px;
-        left: 16px;
-        padding: 8px 14px;
-        border-radius: 999px;
-        background: rgba(255, 255, 255, 0.9);
-        font-weight: 600;
-      }
-
-      .reviews {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-        gap: 18px;
-      }
-
-      .review {
-        background: white;
-        padding: 20px;
-        border-radius: 20px;
-        box-shadow: var(--shadow);
-        display: grid;
-        gap: 12px;
-      }
-
-      .review strong {
-        font-size: 15px;
-      }
-
-      .review p {
-        color: var(--muted);
-      }
-
-      .visit {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 24px;
-        align-items: center;
-      }
-
-      .visit-card {
-        background: white;
-        border-radius: 24px;
-        padding: 22px;
-        box-shadow: var(--shadow);
-        display: grid;
-        gap: 16px;
-      }
-
-      .info-row {
-        display: grid;
-        gap: 6px;
-      }
-
-      .info-row span {
-        color: var(--muted);
-        font-size: 14px;
-      }
-
-      .map-preview {
-        border-radius: 26px;
-        overflow: hidden;
-        background: linear-gradient(130deg, #ffe4ef, #fff);
-        padding: 30px;
-        min-height: 320px;
-        display: grid;
-        gap: 14px;
-        box-shadow: var(--shadow);
-      }
-
-      .map-preview h3 {
-        margin: 0;
-      }
-
-      .map-preview .cta-group {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 12px;
-      }
-
-      .gallery-mosaic {
-        --row: 60px;
-        grid-template-columns: repeat(8, 1fr);
-      }
-
-      footer {
-        padding: 40px 24px 60px;
-        text-align: center;
-        color: var(--muted);
-      }
-
-      .sticky-bar {
-        position: fixed;
-        bottom: calc(16px + env(safe-area-inset-bottom));
-        left: 50%;
-        transform: translateX(-50%);
-        width: min(520px, calc(100% - 32px));
-        background: white;
-        border-radius: 999px;
-        box-shadow: 0 20px 50px rgba(36, 10, 20, 0.25);
-        display: none;
-        justify-content: space-between;
-        padding: 10px;
-        z-index: 30;
-      }
-
-      .sticky-bar a {
-        flex: 1;
-        text-align: center;
-        padding: 10px 12px;
-        border-radius: 999px;
-        font-weight: 600;
-        color: var(--hot);
-      }
-
-      .sticky-bar a.primary {
-        background: linear-gradient(135deg, var(--hot), var(--hot-2));
-        color: white;
-      }
-
-      @media (max-width: 900px) {
-        .nav-links {
-          display: none;
-        }
-
-        .hero {
-          grid-template-columns: 1fr;
-        }
-
-        .hero-copy,
-        .hero-media {
-          grid-column: span 1;
-        }
-
-        .hero-card img {
-          height: 360px;
-        }
-
-        .hero-media {
-          order: -1;
-        }
-
-        .hero-copy {
-          order: 1;
-        }
-
-        .hero-mosaic {
-          order: 2;
-        }
-
-        .grid-mosaic {
-          grid-template-columns: repeat(2, 1fr);
-          grid-auto-rows: 160px;
-          grid-auto-flow: row;
-        }
-
-        .gallery-mosaic {
-          grid-template-columns: repeat(2, 1fr);
-        }
-
-        .mosaic-item,
-        .vibe-card {
-          grid-column: span 1 !important;
-          grid-row: span 1 !important;
-        }
-
-        .menu-mosaic {
-          grid-auto-rows: 160px;
-        }
-
-        .menu-mosaic .menu-card {
-          grid-column: span 1 !important;
-          grid-row: span 2 !important;
-        }
-
-        .menu-card {
-          height: auto;
-        }
-
-        .menu-card img {
-          height: 200px;
-        }
-
-        .menu-card .content {
-          padding: 18px;
-        }
-
-        .sticky-bar {
-          display: flex;
-        }
-
-        footer {
-          padding-bottom: 140px;
-        }
-      }
-
-      @media (max-width: 600px) {
-        .nav-inner {
-          padding: 12px 16px;
-        }
-
-        .brand span {
-          font-size: 18px;
-        }
-
-        .nav-call {
-          font-size: 13px;
-          padding: 6px 10px;
-        }
-
-        .hero {
-          padding: 28px 18px 64px;
-          gap: 20px;
-        }
-
-        .hero-eyebrow {
-          font-size: 12px;
-        }
-
-        .hero h1 {
-          font-size: 30px;
-        }
-
-        .hero p {
-          font-size: 15px;
-        }
-
-        .hero-actions {
-          flex-direction: column;
-        }
-
-        .hero-actions .cta {
-          width: 100%;
-          font-size: 15px;
-        }
-
-        .hero-actions {
-          display: none;
-        }
-
-        .hero-card img {
-          height: 280px;
-        }
-
-        .stats {
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 10px;
-        }
-
-        .stat {
-          padding: 12px 14px;
-        }
-
-        .stat:nth-child(3) {
-          grid-column: span 2;
-        }
-
-        .grid-mosaic {
-          grid-auto-rows: 140px;
-          gap: 12px;
-        }
-
-        .hero-mosaic {
-          display: none;
-        }
-
-        .section {
-          padding: 56px 18px;
-        }
-
-        .section h2 {
-          font-size: 26px;
-        }
-
-        .section p.lead {
-          margin-bottom: 22px;
-        }
-
-        .menu-mosaic {
-          grid-template-columns: 1fr;
-          grid-auto-rows: auto;
-        }
-
-        .menu-mosaic .menu-card {
-          grid-row: auto !important;
-        }
-
-        .menu-card img {
-          height: 220px;
-        }
-
-        .menu-card .content {
-          min-height: unset;
-        }
-
-        .map-preview {
-          padding: 22px;
-          min-height: 0;
-        }
-
-        .sticky-bar {
-          width: calc(100% - 20px);
-          padding: 8px;
-        }
-
-        .sticky-bar a {
-          font-size: 14px;
-          padding: 10px 8px;
-        }
-      }
-
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-8px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-
-      .float {
-        animation: float 5s ease-in-out infinite;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
   </head>
   <body>
-    <div class="page">
-      <nav class="nav">
-        <div class="nav-inner">
-          <div class="brand">
-            <span>Sweety Vaffel</span>
-          </div>
-          <div class="nav-links">
-            <a href="#menu">Menü</a>
-            <a href="#vibe">Mekân</a>
-            <a href="#reviews">Yorumlar</a>
-            <a href="#visit">İletişim</a>
-          </div>
-          <a class="nav-call" href="tel:+905319612520">Ara: 0531 961 25 20</a>
+    <div class="site-bg"></div>
+    <header class="topbar" id="top">
+      <nav class="nav shell" aria-label="Ana gezinme">
+        <a class="brand" href="#top" aria-label="Sweety Vaffel anasayfa">
+          <span class="brand-mark">SV</span>
+          <span class="brand-text">Sweety Vaffel</span>
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu">
+          Menü
+        </button>
+        <div class="nav-links" id="main-menu">
+          <a href="#menu">Menü</a>
+          <a href="#mekan">Mekân</a>
+          <a href="#iletisim">İletişim</a>
+        </div>
+        <div class="nav-actions">
+          <a class="pill-btn ghost" href="tel:+905319612520">Ara</a>
+          <a
+            class="pill-btn glow"
+            href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC"
+            target="_blank"
+            rel="noreferrer">
+            Yol Tarifi
+          </a>
         </div>
       </nav>
+    </header>
 
-      <section class="hero" id="top">
-        <div class="hero-copy">
-          <div class="hero-eyebrow">Kafe · Tatlı barı · Beylikdüzü</div>
-          <h1>Geceye yakışan waffle’lar, neonun altında.</h1>
-          <p>
-            Sweety Vaffel, Kavaklı’da tatlı kaçamağı için en sıcak durak. Bol soslu
-            waffle’lar, cheesecake’ler ve oyun köşeleriyle gece 00:00’a kadar açık.
+    <main>
+      <section class="hero shell">
+        <div class="hero-copy reveal">
+          <p class="hero-kicker">Beylikdüzü Gece Tatlı Noktası</p>
+          <h1 class="flicker">Neon Işıkta Daily Operations Show</h1>
+          <p class="hero-description">
+            Şık tasarım, hızlı servis ve premium tatlı sunumuyla günün en yoğun saatlerinde bile
+            yüksek dönüşüm odaklı bir deneyim.
           </p>
-          <div class="hero-actions">
-            <a class="cta primary" href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC">Yol Tarifi Al</a>
-            <a class="cta ghost" href="https://menu-online.co/sweetyvaffel/" target="_blank" rel="noreferrer">Menüyü Gör</a>
+          <div class="hero-cta">
+            <a class="cta cta-primary" href="#menu">Menüyü Keşfet</a>
+            <a class="cta cta-secondary" data-wa-general href="#">WhatsApp'tan Sor</a>
           </div>
-          <div class="stats">
-            <div class="stat">
-              <strong>4.9 ★</strong>
-              <span>59 yorum</span>
-            </div>
-            <div class="stat">
-              <strong>₺200–400</strong>
-              <span>Kişi başı</span>
-            </div>
-            <div class="stat">
-              <strong>00:00’a kadar açık</strong>
-              <span>Salon · Paket · Temassız teslimat</span>
-            </div>
-          </div>
+          <ul class="hero-metrics" aria-label="Mekân özeti">
+            <li>
+              <strong>4.9</strong>
+              <span>Misafir Puanı</span>
+            </li>
+            <li>
+              <strong>00:00</strong>
+              <span>Kapanış Saati</span>
+            </li>
+            <li>
+              <strong>7 dk</strong>
+              <span>Ortalama Sipariş Hazırlama</span>
+            </li>
+          </ul>
         </div>
-        <div class="hero-media">
-          <div class="hero-card">
-            <img src="neon-sign-chair.png" alt="Sweety Vaffel neon ışıklı oturma alanı" />
-            <div class="overlay"></div>
-            <div class="tag">Pembe neon atmosfer</div>
+        <article class="hero-media reveal">
+          <img
+            src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?auto=format&fit=crop&w=1600&q=80"
+            alt="Neon ışıklı tatlı kafe iç mekanı"
+            fetchpriority="high" />
+          <div class="hero-media-overlay">
+            <p>Gecenin enerjisi: pink + purple neon</p>
           </div>
-        </div>
-        <div class="grid-mosaic collage hero-mosaic">
-          <div class="mosaic-item w-5 h-4 float"><img src="berry-waffle.png" alt="Pembe soslu meyveli waffle" /></div>
-          <div class="mosaic-item w-4 h-3"><img src="biscoff-cheesecake.png" alt="Biscoff cheesecake" /></div>
-          <div class="mosaic-item w-3 h-3"><img src="pistachio-waffle.png" alt="Antep fıstıklı waffle" /></div>
-          <div class="mosaic-item w-4 h-4 float"><img src="blueberry-cheesecake.png" alt="Yaban mersinli cheesecake" /></div>
-          <div class="mosaic-item w-5 h-3"><img src="donut-assortment.png" alt="Donut tabağı" /></div>
-          <div class="mosaic-item w-3 h-4"><img src="red-velvet-cake.png" alt="Red velvet mini pasta" /></div>
+        </article>
+      </section>
+
+      <section class="menu-section shell" id="menu">
+        <header class="section-head reveal">
+          <p class="section-kicker">Interactive Menü</p>
+          <h2>En Çok Satanlar ve Yeni Lezzetler</h2>
+          <p>
+            Kart yapısı, net fiyat hiyerarşisi ve tek dokunuşla WhatsApp siparişi ile yüksek dönüşüm.
+          </p>
+        </header>
+
+        <!-- Fiyat güncelleme notu: Her ürünün fiyatını ilgili .menu-price metninden düzenleyebilirsiniz. -->
+        <div class="menu-grid">
+          <article class="menu-card featured reveal">
+            <figure class="menu-media">
+              <span class="badge best">En Çok Satan</span>
+              <img
+                src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?auto=format&fit=crop&w=1200&q=80"
+                alt="Çilekli çikolatalı waffle"
+                loading="lazy" />
+            </figure>
+            <div class="menu-content">
+              <h3>Berry Dream Waffle</h3>
+              <p>Taze çilek, muz, çikolata sos ve vanilya kreması ile imza sunum.</p>
+              <div class="menu-row">
+                <span class="menu-price">299 TL</span>
+                <button class="order-btn" type="button" data-order-item="Berry Dream Waffle">
+                  Sipariş Ver
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <figure class="menu-media">
+              <span class="badge new">Yeni</span>
+              <img
+                src="https://images.unsplash.com/photo-1505253216365-4e35d6a6e5b8?auto=format&fit=crop&w=1200&q=80"
+                alt="Antep fıstıklı waffle"
+                loading="lazy" />
+            </figure>
+            <div class="menu-content">
+              <h3>Pistachio Crush</h3>
+              <p>Antep fıstığı kreması, beyaz çikolata ve çilek ile dengeli premium tat.</p>
+              <div class="menu-row">
+                <span class="menu-price">319 TL</span>
+                <button class="order-btn" type="button" data-order-item="Pistachio Crush">
+                  Sipariş Ver
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <figure class="menu-media">
+              <span class="badge best">En Çok Satan</span>
+              <img
+                src="https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=1200&q=80"
+                alt="Biscoff cheesecake dilimi"
+                loading="lazy" />
+            </figure>
+            <div class="menu-content">
+              <h3>Biscoff Cheesecake</h3>
+              <p>Karamelize bisküvili taban, yumuşak krem peynir katmanı ve özel sos.</p>
+              <div class="menu-row">
+                <span class="menu-price">259 TL</span>
+                <button class="order-btn" type="button" data-order-item="Biscoff Cheesecake">
+                  Sipariş Ver
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <figure class="menu-media">
+              <span class="badge new">Yeni</span>
+              <img
+                src="https://images.unsplash.com/photo-1606890737304-57a1ca8a5b62?auto=format&fit=crop&w=1200&q=80"
+                alt="Blueberry cheesecake"
+                loading="lazy" />
+            </figure>
+            <div class="menu-content">
+              <h3>Blueberry Glow Cake</h3>
+              <p>Yaban mersini sosu, limonsu kreması ve ince bisküvi kırıntısı ile ferah bitiş.</p>
+              <div class="menu-row">
+                <span class="menu-price">269 TL</span>
+                <button class="order-btn" type="button" data-order-item="Blueberry Glow Cake">
+                  Sipariş Ver
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <figure class="menu-media">
+              <span class="badge best">En Çok Satan</span>
+              <img
+                src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?auto=format&fit=crop&w=1200&q=80"
+                alt="Red velvet pasta"
+                loading="lazy" />
+            </figure>
+            <div class="menu-content">
+              <h3>Red Velvet Slice</h3>
+              <p>Kadifemsi doku, hafif krem peynirli iç dolgusu ve yoğun görünüş.</p>
+              <div class="menu-row">
+                <span class="menu-price">239 TL</span>
+                <button class="order-btn" type="button" data-order-item="Red Velvet Slice">
+                  Sipariş Ver
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <article class="menu-card reveal">
+            <figure class="menu-media">
+              <span class="badge new">Yeni</span>
+              <img
+                src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=1200&q=80"
+                alt="Tiramisu tabağı"
+                loading="lazy" />
+            </figure>
+            <div class="menu-content">
+              <h3>Tiramisu Night Cup</h3>
+              <p>Espresso aromalı kek, mascarpone kreması ve kakao bitişiyle dengeli lezzet.</p>
+              <div class="menu-row">
+                <span class="menu-price">229 TL</span>
+                <button class="order-btn" type="button" data-order-item="Tiramisu Night Cup">
+                  Sipariş Ver
+                </button>
+              </div>
+            </div>
+          </article>
         </div>
       </section>
 
-      <section class="section" id="menu">
-        <h2>Öne çıkan tatlılar</h2>
-        <p class="lead">Taze, parlak ve bol malzemeli. Arkadaşlarla paylaşmaya birebir.</p>
-        <div class="grid-mosaic menu-mosaic">
-          <div class="menu-card w-5 h-4">
-            <img src="berry-waffle.png" alt="Meyveli waffle" />
-            <div class="content">
-              <strong>Berry Dream Waffle</strong>
-              <span class="pill">En çok tercih edilen</span>
-              <span>Meyve, pistachio, pembe sos, vanilya kreması.</span>
-            </div>
-          </div>
-          <div class="menu-card w-4 h-4">
-            <img src="pistachio-waffle.png" alt="Antep fıstıklı waffle" />
-            <div class="content">
-              <strong>Pistachio Crush Waffle</strong>
-              <span class="pill">Fıstık severlere</span>
-              <span>Yeşil sos, çilek, beyaz çikolata.</span>
-            </div>
-          </div>
-          <div class="menu-card w-3 h-4">
-            <img src="biscoff-cheesecake.png" alt="Biscoff cheesecake" />
-            <div class="content">
-              <strong>Biscoff Cheesecake</strong>
-              <span class="pill">Kremamsı</span>
-              <span>Kurabiye kırığı, vanilya dokusu, karamel.</span>
-            </div>
-          </div>
-          <div class="menu-card w-3 h-4">
-            <img src="tiramisu-cake.png" alt="Tiramisu mini pasta" />
-            <div class="content">
-              <strong>Tiramisu Bite</strong>
-              <span class="pill">Kahve dokunuşu</span>
-              <span>Yumuşak katlar, kakao pudrası.</span>
-            </div>
-          </div>
-          <div class="menu-card w-4 h-4">
-            <img src="blueberry-cheesecake.png" alt="Yaban mersinli cheesecake" />
-            <div class="content">
-              <strong>Blueberry Cheesecake</strong>
-              <span class="pill">Meyveli</span>
-              <span>Yaban mersini sosu, tereyağlı taban.</span>
-            </div>
-          </div>
-          <div class="menu-card w-5 h-4">
-            <img src="red-velvet-cake.png" alt="Red velvet pasta" />
-            <div class="content">
-              <strong>Red Velvet Swirl</strong>
-              <span class="pill">Yoğun lezzet</span>
-              <span>Kırmızı kadife dokusu, krema swirl.</span>
-            </div>
-          </div>
+      <section class="gallery-section shell" id="mekan">
+        <header class="section-head reveal">
+          <p class="section-kicker">Mekân Atmosferi</p>
+          <h2>Neon Night Gallery</h2>
+          <p>
+            Modern grid-masonry düzeniyle mekanı anlatan detay kareler. Mobilde akıcı, desktopta vurucu.
+          </p>
+        </header>
+        <div class="masonry-grid">
+          <article class="masonry-item tall reveal">
+            <img
+              src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1000&q=80"
+              alt="Neon kafe oturma alanı"
+              loading="lazy" />
+          </article>
+          <article class="masonry-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=1000&q=80"
+              alt="Kafe tezgah detay"
+              loading="lazy" />
+          </article>
+          <article class="masonry-item reveal wide">
+            <img
+              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80"
+              alt="Sıcak kafe atmosferi"
+              loading="lazy" />
+          </article>
+          <article class="masonry-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=1000&q=80"
+              alt="Masa üstü tatlı sunumu"
+              loading="lazy" />
+          </article>
+          <article class="masonry-item tall reveal">
+            <img
+              src="https://images.unsplash.com/photo-1482275548304-a58859dc31b7?auto=format&fit=crop&w=1000&q=80"
+              alt="Neon ışıklı kafe dekoru"
+              loading="lazy" />
+          </article>
+          <article class="masonry-item reveal">
+            <img
+              src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1000&q=80"
+              alt="Gece kafe dış görünümü"
+              loading="lazy" />
+          </article>
         </div>
       </section>
 
-      <section class="section" id="vibe">
-        <h2>Pembe ışık, oyun gecesi havası</h2>
-        <p class="lead">Fotoğraf köşeleri, neon glow ve masa oyunlarıyla tam bir buluşma noktası.</p>
-        <div class="grid-mosaic vibe-mosaic">
-          <div class="vibe-card w-7 h-4">
-            <img src="counter-front.png" alt="Sweety Vaffel tezgahı" />
-            <span>İmza tezgah</span>
+      <section class="contact-section shell" id="iletisim">
+        <article class="contact-card reveal">
+          <h2>Bugün Uğrayın, 1 Dokunuşla Ulaşın</h2>
+          <p>
+            Kavaklı, Olimpiyat Cd. NO:33 C BLOK, 34520 Beylikdüzü / İstanbul. Salon, paket ve hızlı
+            teslimat seçenekleri.
+          </p>
+          <div class="contact-actions">
+            <a class="cta cta-primary" href="tel:+905319612520">Hemen Ara</a>
+            <a
+              class="cta cta-secondary"
+              href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC"
+              target="_blank"
+              rel="noreferrer">
+              Yol Tarifi Al
+            </a>
           </div>
-          <div class="vibe-card w-5 h-4">
-            <img src="counter-angle.png" alt="Pembe ışıklı iç mekan" />
-            <span>Gece atmosferi</span>
-          </div>
-          <div class="vibe-card w-5 h-4">
-            <img src="pink-shelf-flamingos.png" alt="Pembe dekor köşesi" />
-            <span>Fotoğraf köşesi</span>
-          </div>
-          <div class="vibe-card w-7 h-4">
-            <img src="dessert-display.png" alt="Tatlı vitrin dolabı" />
-            <span>Tatlı bar</span>
-          </div>
-          <div class="vibe-card w-4 h-4">
-            <img src="board-games-shelf.png" alt="Masa oyunları rafı" />
-            <span>Masa oyunları</span>
-          </div>
-          <div class="vibe-card w-8 h-4">
-            <img src="pistachio-layer-cake.png" alt="Antep fıstıklı dilim pasta" />
-            <span>Günlük taze dilimler</span>
-          </div>
-        </div>
+          <ul class="contact-points">
+            <li>Telefon: 0531 961 25 20</li>
+            <li>Çalışma: Her gün 12:00 - 00:00</li>
+            <li>Fiyat Aralığı: 200 TL - 400 TL</li>
+          </ul>
+        </article>
+        <article class="contact-image reveal">
+          <img
+            src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1400&q=80"
+            alt="Kafe personeli tatlı servisi"
+            loading="lazy" />
+        </article>
       </section>
+    </main>
 
-      <section class="section" id="reviews">
-        <h2>Misafir yorumları</h2>
-        <p class="lead">4.9 yıldız ve 59 yorum. Aile sıcaklığı ve öğrenci dostu fiyatlar öne çıkıyor.</p>
-        <div class="reviews">
-          <div class="review">
-            <strong>“MÜKEMMEL.”</strong>
-            <p>Yemek: 5 · Servis: 5</p>
-            <span>— Yetiş Yetişkin</span>
-          </div>
-          <div class="review">
-            <strong>“Sıcak, aile dostu bir yer.”</strong>
-            <p>Masa oyunları var, personel ilgili, tatlılar çok güzel. (Çeviri)</p>
-            <span>— Mnz Mansur</span>
-          </div>
-          <div class="review">
-            <strong>“Dekorasyon çok güzel, ürünler lezzetli.”</strong>
-            <p>Garsonlar ilgili, çay taze, tavsiye ederim. (Çeviri)</p>
-            <span>— Halil E. Aydın</span>
-          </div>
-        </div>
-      </section>
+    <a class="floating-wa" data-wa-general href="#" aria-label="WhatsApp ile iletişime geç">
+      <span aria-hidden="true">WA</span>
+      <span>WhatsApp</span>
+    </a>
 
-      <section class="section" id="visit">
-        <h2>Bizi ziyaret edin</h2>
-        <p class="lead">Kavaklı, Olimpiyat Cd. NO:33 C BLOK, 34520 Beylikdüzü/İstanbul</p>
-        <div class="visit">
-          <div class="visit-card">
-            <div class="info-row">
-              <strong>Adres</strong>
-              <span>Kavaklı, Olimpiyat Cd. NO:33 C BLOK, 34520 Beylikdüzü/İstanbul</span>
-            </div>
-            <div class="info-row">
-              <strong>Telefon</strong>
-              <span>0531 961 25 20</span>
-            </div>
-            <div class="info-row">
-              <strong>Plus Code</strong>
-              <span>XMJ6+QM Beylikdüzü, İstanbul</span>
-            </div>
-            <div class="info-row">
-              <strong>Fiyat Aralığı</strong>
-              <span>₺200–400 (kişi başı)</span>
-            </div>
-            <div class="info-row">
-              <strong>Menü</strong>
-              <span>menu-online.co/sweetyvaffel</span>
-            </div>
-          </div>
-          <div class="map-preview">
-            <h3>Hızlıca ulaşın</h3>
-            <p>00:00’a kadar açık. Salon, paket, temassız teslimat mevcut.</p>
-            <div class="cta-group">
-              <a class="cta primary" href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC">Haritada Aç</a>
-              <a class="cta ghost" href="tel:+905319612520">Hemen Ara</a>
-            </div>
-            <div class="grid-mosaic gallery-mosaic">
-              <div class="mosaic-item w-4 h-3"><img src="donut-assortment.png" alt="Donut tabağı" /></div>
-              <div class="mosaic-item w-4 h-3"><img src="pistachio-layer-cake.png" alt="Antep fıstıklı pasta" /></div>
-              <div class="mosaic-item w-3 h-3"><img src="tiramisu-cake.png" alt="Tiramisu dilimi" /></div>
-              <div class="mosaic-item w-5 h-3"><img src="blueberry-cheesecake.png" alt="Yaban mersinli cheesecake" /></div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <aside class="mobile-dock" aria-label="Hızlı iletişim kısayolları">
+      <a href="tel:+905319612520">Ara</a>
+      <a href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC" target="_blank" rel="noreferrer">Yol Tarifi</a>
+      <a data-wa-general href="#">WhatsApp</a>
+    </aside>
 
-      <footer>
-        <p>Sweety Vaffel · 4.9 ★ (59 yorum) · Beylikdüzü/İstanbul</p>
-        <p>Gece tatlısı için uğra, paket için ara.</p>
-      </footer>
-
-      <div class="sticky-bar">
-        <a href="tel:+905319612520">Ara</a>
-        <a class="primary" href="https://www.google.com/maps/search/?api=1&query=Sweety%20Vaffel%20Beylikd%C3%BCz%C3%BC">Yol Tarifi</a>
-        <a href="https://menu-online.co/sweetyvaffel/" target="_blank" rel="noreferrer">Menü</a>
-      </div>
-    </div>
+    <footer class="footer shell">
+      <p>Sweety Vaffel Daily Operations Demo</p>
+      <p>Neon night tasarım + mobil odaklı yüksek dönüşümlü sipariş deneyimi.</p>
+    </footer>
   </body>
 </html>
