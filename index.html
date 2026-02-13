@@ -7,35 +7,35 @@
     <meta
       name="description"
       content="Sweety Vaffel: premium tatli deneyimi, hizli WhatsApp siparis, modern mekan ve geceye uzanan lezzet." />
-    <meta name="theme-color" content="#16111c" />
+    <meta name="theme-color" content="#fff7fc" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
       rel="stylesheet" />
 
     <style>
 :root {
-  --bg: #16111c;
-  --bg-2: #22182b;
-  --surface: #261d30;
-  --surface-soft: #2e2439;
-  --card-light: #fff9f4;
-  --text: #f7f2ff;
-  --text-soft: #c9bdd8;
+  --bg: #fff7fc;
+  --bg-2: #fdfbff;
+  --surface: #ffffff;
+  --surface-soft: #f9f2ff;
+  --card-light: #ffffff;
+  --text: #271732;
+  --text-soft: #6f5b7f;
   --ink: #2d2338;
   --berry: #ff4d8d;
   --grape: #8f45d6;
   --gold: #f0b768;
   --success: #33c78b;
-  --stroke: rgba(255, 255, 255, 0.14);
+  --stroke: rgba(146, 95, 173, 0.2);
   --radius-xl: 26px;
   --radius-lg: 18px;
   --radius-md: 12px;
-  --shadow-lg: 0 24px 50px rgba(0, 0, 0, 0.35);
-  --shadow-soft: 0 10px 24px rgba(0, 0, 0, 0.24);
-  --neon-glow: 0 0 14px rgba(255, 77, 141, 0.5), 0 0 30px rgba(143, 69, 214, 0.35);
+  --shadow-lg: 0 20px 44px rgba(93, 59, 120, 0.14);
+  --shadow-soft: 0 12px 24px rgba(93, 59, 120, 0.12);
+  --neon-glow: 0 8px 20px rgba(255, 77, 141, 0.28), 0 2px 6px rgba(143, 69, 214, 0.25);
   --t: 220ms ease;
 }
 
@@ -51,10 +51,10 @@ html {
 body {
   margin: 0;
   min-height: 100vh;
-  font-family: "Manrope", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at 0% -10%, rgba(255, 77, 141, 0.28), transparent 38%),
-    radial-gradient(circle at 100% 10%, rgba(143, 69, 214, 0.28), transparent 42%),
+  background: radial-gradient(circle at 0% -10%, rgba(255, 77, 141, 0.18), transparent 40%),
+    radial-gradient(circle at 100% 8%, rgba(143, 69, 214, 0.14), transparent 44%),
     linear-gradient(160deg, var(--bg), var(--bg-2));
   overflow-x: hidden;
 }
@@ -63,8 +63,8 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.12;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.4) 0.7px, transparent 0.7px);
+  opacity: 0.15;
+  background-image: radial-gradient(rgba(157, 98, 189, 0.22) 0.7px, transparent 0.7px);
   background-size: 4px 4px;
   z-index: -1;
 }
@@ -85,8 +85,8 @@ h1,
 h2,
 h3,
 .brand-name {
-  font-family: "Playfair Display", serif;
-  letter-spacing: 0.01em;
+  font-family: "Sora", sans-serif;
+  letter-spacing: -0.01em;
 }
 
 p {
@@ -143,8 +143,8 @@ p {
   border-radius: 16px;
   border: 1px solid var(--stroke);
   backdrop-filter: blur(10px);
-  background: rgba(20, 14, 28, 0.9);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: var(--shadow-soft);
   transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
 }
 
@@ -154,8 +154,8 @@ p {
   inset: -1px;
   border-radius: inherit;
   background:
-    radial-gradient(220px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 141, 0.24), transparent 62%),
-    radial-gradient(260px circle at calc(100% - var(--mouse-x, 50%)) calc(100% - var(--mouse-y, 50%)), rgba(143, 69, 214, 0.2), transparent 65%);
+    radial-gradient(220px circle at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(255, 77, 141, 0.16), transparent 62%),
+    radial-gradient(260px circle at calc(100% - var(--mouse-x, 50%)) calc(100% - var(--mouse-y, 50%)), rgba(143, 69, 214, 0.14), transparent 65%);
   z-index: 0;
   animation: nav-glow-drift 8s ease-in-out infinite;
 }
@@ -167,7 +167,7 @@ p {
   left: -35%;
   width: 30%;
   height: 140%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.66), transparent);
   transform: skewX(-18deg);
   animation: nav-sweep 10.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
   z-index: 0;
@@ -181,8 +181,8 @@ p {
 
 .nav.is-scrolled {
   transform: translateY(-2px) scale(0.995);
-  border-color: rgba(255, 255, 255, 0.26);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28);
+  border-color: rgba(138, 79, 169, 0.35);
+  box-shadow: 0 14px 30px rgba(101, 64, 129, 0.2);
 }
 
 .brand {
@@ -194,21 +194,22 @@ p {
 }
 
 .brand-name {
-  font-size: clamp(1.25rem, 1.9vw, 1.55rem);
+  font-size: clamp(1.2rem, 1.8vw, 1.45rem);
+  font-weight: 800;
   line-height: 1;
-  color: #f6f0fb;
-  background: linear-gradient(90deg, #ffffff, #ffd9ec, #f4ebff, #ffffff);
-  background-size: 220% 100%;
+  color: #431758;
+  background: linear-gradient(100deg, #4b1a63, #ff4d8d, #6928a6, #4b1a63);
+  background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: brand-shimmer 7s linear infinite;
+  animation: brand-shimmer 10s linear infinite;
 }
 
 .menu-toggle {
   margin-left: auto;
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(126, 73, 157, 0.32);
+  background: rgba(255, 255, 255, 0.9);
   color: var(--text);
   border-radius: 999px;
   width: 2.7rem;
@@ -227,7 +228,7 @@ p {
   display: block;
   width: 1.18rem;
   height: 2px;
-  background: #f6edf9;
+  background: #4c2565;
   border-radius: 999px;
   transition: transform 360ms ease, opacity 260ms ease, width 260ms ease;
 }
@@ -270,7 +271,7 @@ p {
 }
 
 .nav-links a {
-  color: #e9deef;
+  color: #4b2d60;
   font-weight: 700;
   transition: color var(--t), opacity var(--t), text-shadow var(--t);
   position: relative;
@@ -278,9 +279,9 @@ p {
 }
 
 .nav-links a:hover {
-  color: #ffffff;
+  color: #281337;
   opacity: 1;
-  text-shadow: 0 0 7px rgba(255, 77, 141, 0.35);
+  text-shadow: 0 0 7px rgba(255, 77, 141, 0.2);
 }
 
 .nav-links a::after {
@@ -361,8 +362,8 @@ p {
 
 .btn-outline {
   color: var(--text);
-  border-color: rgba(255, 255, 255, 0.25);
-  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(112, 68, 139, 0.3);
+  background: rgba(255, 255, 255, 0.76);
 }
 
 .btn:hover {
@@ -385,7 +386,7 @@ main {
 .contact-card,
 .trust article {
   border: 1px solid var(--stroke);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03));
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(250, 241, 255, 0.9));
   border-radius: var(--radius-xl);
   box-shadow: var(--shadow-lg);
 }
@@ -398,7 +399,7 @@ main {
 }
 
 .hero-kicker {
-  color: #f1c7dd;
+  color: #a33678;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
@@ -409,7 +410,7 @@ main {
   margin: 0.6rem 0 0;
   font-size: clamp(2.2rem, 9vw, 4rem);
   line-height: 1.04;
-  text-shadow: 0 0 14px rgba(255, 77, 141, 0.58), 0 0 24px rgba(143, 69, 214, 0.44);
+  text-shadow: 0 0 10px rgba(255, 77, 141, 0.2);
 }
 
 .hero-copy p {
@@ -437,14 +438,14 @@ main {
 .hero-stats li {
   padding: 0.62rem;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  background: rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(132, 79, 161, 0.2);
+  background: rgba(255, 255, 255, 0.78);
 }
 
 .hero-stats strong {
   display: block;
   font-size: 0.95rem;
-  color: #ffd1e7;
+  color: #7d2c62;
 }
 
 .hero-stats span {
@@ -467,13 +468,13 @@ main {
   bottom: 1rem;
   border-radius: var(--radius-md);
   padding: 0.65rem 0.75rem;
-  background: rgba(20, 12, 28, 0.72);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(133, 79, 161, 0.24);
 }
 
 .media-note strong {
   font-size: 0.9rem;
-  color: #ffcee6;
+  color: #5f276f;
 }
 
 .media-note span {
@@ -490,7 +491,7 @@ main {
 .eyebrow {
   font-size: 0.74rem;
   font-weight: 800;
-  color: #f1c7dd;
+  color: #a33678;
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
@@ -523,7 +524,7 @@ main {
   overflow: hidden;
   background: var(--card-light);
   color: var(--ink);
-  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+  box-shadow: 0 16px 30px rgba(93, 59, 120, 0.16);
   display: flex;
   flex-direction: column;
   transition: transform var(--t), box-shadow var(--t);
@@ -531,7 +532,7 @@ main {
 
 .dish-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 20px 38px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 38px rgba(93, 59, 120, 0.22);
 }
 
 .dish-media {
@@ -682,7 +683,7 @@ main {
 }
 
 .contact-card a {
-  color: #ffd5e8;
+  color: #6c2f8c;
 }
 
 .contact-actions {
@@ -700,8 +701,8 @@ main {
 
 .contact-side-card {
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: linear-gradient(160deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.03));
+  border: 1px solid rgba(132, 79, 161, 0.22);
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.95), rgba(246, 236, 255, 0.86));
   padding: 0.95rem;
   display: grid;
   gap: 0.62rem;
@@ -712,7 +713,7 @@ main {
   letter-spacing: 0.09em;
   text-transform: uppercase;
   font-weight: 800;
-  color: #f6cde3;
+  color: #a33678;
 }
 
 .contact-side-card h3 {
@@ -733,8 +734,8 @@ main {
 
 .contact-quick-grid article {
   border-radius: var(--radius-md);
-  border: 1px solid rgba(255, 255, 255, 0.17);
-  background: rgba(7, 5, 11, 0.26);
+  border: 1px solid rgba(132, 79, 161, 0.2);
+  background: rgba(255, 255, 255, 0.82);
   padding: 0.7rem;
   display: grid;
   gap: 0.2rem;
@@ -744,12 +745,12 @@ main {
   font-size: 0.7rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #f5cadf;
+  color: #a34786;
 }
 
 .contact-quick-grid strong {
   font-size: 0.86rem;
-  color: #f6f0fb;
+  color: var(--text);
 }
 
 .map-section {
@@ -822,22 +823,22 @@ main {
   border-radius: 999px;
   border: 1px solid var(--stroke);
   backdrop-filter: blur(10px);
-  background: rgba(16, 11, 22, 0.84);
+  background: rgba(255, 255, 255, 0.86);
 }
 
 .mobile-dock a {
   text-align: center;
   padding: 0.62rem 0.45rem;
   border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(126, 73, 157, 0.24);
+  background: rgba(255, 255, 255, 0.82);
   font-weight: 800;
   font-size: 0.8rem;
 }
 
 .mobile-dock a:last-child {
-  color: inherit;
-  background: rgba(255, 255, 255, 0.05);
+  color: #45215d;
+  background: linear-gradient(120deg, #ffe4f0, #ffd2e5);
 }
 
 .reveal {
@@ -959,8 +960,8 @@ main {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
-    background: linear-gradient(150deg, rgba(31, 21, 44, 0.95), rgba(18, 12, 27, 0.92));
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.28);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.94), rgba(247, 236, 255, 0.94));
+    box-shadow: 0 12px 30px rgba(93, 59, 120, 0.16);
   }
 
   .nav::after {
@@ -974,7 +975,7 @@ main {
   }
 
   .brand-name {
-    font-size: clamp(1.9rem, 10vw, 2.35rem);
+    font-size: clamp(1.55rem, 8.9vw, 2rem);
     line-height: 1;
   }
 
@@ -982,10 +983,10 @@ main {
     margin-left: auto;
     width: 2.56rem;
     height: 2.56rem;
-    border-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(126, 73, 157, 0.3);
     border-radius: 14px;
-    background: linear-gradient(160deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
-    box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.06) inset, 0 8px 22px rgba(0, 0, 0, 0.28);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.96), rgba(247, 236, 255, 0.9));
+    box-shadow: 0 0 0 1px rgba(126, 73, 157, 0.08) inset, 0 8px 22px rgba(93, 59, 120, 0.16);
   }
 
   .nav-links {
@@ -1000,9 +1001,9 @@ main {
   .nav.menu-open .nav-links {
     margin-top: 0.4rem;
     padding: 0.52rem;
-    border: 1px solid rgba(255, 255, 255, 0.17);
+    border: 1px solid rgba(126, 73, 157, 0.2);
     border-radius: 16px;
-    background: rgba(13, 10, 21, 0.86);
+    background: rgba(255, 255, 255, 0.92);
     display: grid;
     grid-template-columns: 1fr;
     width: 100%;
@@ -1016,8 +1017,8 @@ main {
     text-align: center;
     border-radius: 12px;
     padding: 0.66rem 0.4rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid rgba(255, 255, 255, 0.16);
+    background: rgba(249, 241, 255, 0.9);
+    border: 1px solid rgba(126, 73, 157, 0.2);
     font-size: 0.93rem;
     letter-spacing: 0.01em;
   }
