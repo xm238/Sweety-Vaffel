@@ -332,13 +332,23 @@ p {
   border-radius: 999px;
   padding: 0.65rem 1rem;
   font-weight: 800;
-  border: 1px solid transparent;
+  border: 0;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background-clip: padding-box;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: transform var(--t), box-shadow var(--t), background var(--t);
 }
 
 .btn-solid {
   color: #331a37;
-  background: linear-gradient(120deg, #ffd5e5, var(--berry) 55%, var(--grape));
+  border: 1px solid rgba(255, 77, 141, 0.26);
+  background-image: linear-gradient(130deg, #ffe5f0 0%, #ff8fbe 46%, #d95af1 100%);
+  background-origin: border-box;
+  background-clip: padding-box;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
   box-shadow: var(--neon-glow);
 }
 
@@ -362,12 +372,12 @@ p {
 
 .btn-outline {
   color: var(--text);
-  border-color: rgba(112, 68, 139, 0.3);
+  border: 1px solid rgba(112, 68, 139, 0.3);
   background: rgba(255, 255, 255, 0.76);
 }
 
 .btn:hover {
-  transform: translateY(-2px);
+  transform: translate3d(0, -2px, 0);
 }
 
 .hero {
@@ -603,13 +613,18 @@ main {
   font-size: 0.83rem;
   font-weight: 800;
   color: #311a38;
-  border: 1px solid rgba(49, 26, 56, 0.15);
-  background: linear-gradient(120deg, #ffd6e8, #ffb0d3);
+  border: 1px solid rgba(255, 77, 141, 0.24);
+  background-image: linear-gradient(130deg, #ffe6f2 0%, #ffa0c9 45%, #e277f4 100%);
+  background-origin: border-box;
+  background-clip: padding-box;
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   transition: transform var(--t), box-shadow var(--t);
 }
 
 .order-btn:hover {
-  transform: translateY(-2px);
+  transform: translate3d(0, -2px, 0);
   box-shadow: 0 8px 18px rgba(255, 77, 141, 0.28);
 }
 
